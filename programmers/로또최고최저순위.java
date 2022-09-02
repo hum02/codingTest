@@ -1,11 +1,15 @@
 package programmers;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+
 public class 로또최고최저순위 {
     public int[] solution(int[] lottos, int[] win_nums) {
         int sameCnt=0;
         int zeroCnt=0;
 
-        //lottos에서 0이 아닌 것 win_nums의 포함개수
         for(int i=0;i<lottos.length;i++){
             if(lottos[i]==0 ){
                 zeroCnt++;

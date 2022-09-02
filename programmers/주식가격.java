@@ -1,3 +1,4 @@
+/*
 class Solution {
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.length];
@@ -17,4 +18,4 @@ class Solution {
 
         return answer;
     }
-}
+}*/

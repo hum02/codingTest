@@ -1,3 +1,5 @@
+package  baekjoon;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,9 +17,11 @@ public class boj1966 {
             int fileNum=Integer.parseInt(l1[0]);
             int idx=Integer.parseInt(l1[1]);
 
+            Map<Integer,Integer> map= new HashMap<>();
             Queue<Integer> q= new LinkedList<>();
-            for(int j=0;j<fileNum;j++){
-                q.add(Integer.parseInt(l2[j]));
+            for(int j=0;j< fileNum;j++){
+                map.put(j,Integer.parseInt(l2[j]));
+                q.add(j);
             }
 
             //문서들 우선순위 중 최댓값 알기 위해 int[] arr저장
@@ -31,27 +35,19 @@ public class boj1966 {
             int pollNum=0;
             for(int max_idx=arr.length-1;max_idx>=0;max_idx--){
 
-                while(q.peek()!=arr[max_idx]){
+                while(map.get( q.peek() )!=arr[max_idx]){
                     q.add(q.poll());
-
-                    //뽑힌 순서 알기 원하는 문서의 위치
-                    --idx;
-                    if(idx<0){
-                        idx=q.size()-1;
-                    }
                 }
 
                 //q peek의 우선순위가 가장 높은 상태
                 //순서 알기 원하던 값이 print되었으면
-                if(idx==0){
+                if( q.peek()==idx ){
                     ++pollNum;
                     answer[i]=pollNum;
                     break;
                 }
-
                 //원한 문서 말고 다른 문서가 print됨
                 q.poll();
-                --idx;
                 ++pollNum;
             }
         }

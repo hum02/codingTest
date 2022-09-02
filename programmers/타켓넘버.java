@@ -1,3 +1,4 @@
+/*
 class Solution {
     int answer=0;
     int[] nums;
@@ -24,3 +25,4 @@ class Solution {
         return answer;
     }
 }
+*/
