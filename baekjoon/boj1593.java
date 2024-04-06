@@ -25,10 +25,10 @@ public class boj1593 {
             ws[W.charAt(i)]++;
             curs[S.charAt(i)]++;
         }
+
         if (isSame()) {
             ans++;
         }
-
         for (int i = g; i < s; i++) {
             curs[S.charAt(i-g)]--;
             curs[S.charAt(i)]++;
